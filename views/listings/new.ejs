@@ -1,0 +1,43 @@
+<%- layout("layouts/boilerplate.ejs")%>
+<body>
+    <h3 style="color: red;">Enter the Details</h3>
+    <div class="rows">
+    <div class="cols-8 offset-2">
+    <form method="post" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Enter Title</label>
+            <input placeholder="type title here" type="text" name="listing[title]" class="form-control" required>
+            <div class="invalid-feedback">Enter valid title</div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input placeholder="type description here" type="text" name="listing[description]" class="form-control" required>
+          <div class="invalid-feedback">Enter valid description</div>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Upload Listing Image</label>
+            <input type="file" name="listing[image]" class="form-control">          
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input placeholder="type price here" name="listing[price]" class="form-control" required>  
+            <div class="invalid-feedback">Enter valid price</div>        
+        </div>
+          <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input placeholder="type location here" type="text" name="listing[location]" class="form-control" required>  
+            <div class="invalid-feedback">Enter valid location</div>        
+        </div>
+        </div> 
+          <div class="mb-3">
+            <label for="country2" class="form-label">Country</label>
+            <input placeholder="type country here" type="text" name="listing[country]" class="form-control" required> 
+            <div class="invalid-feedback">Enter valid country</div>         
+        </div>
+        <button class="btn btn-primary">Add</button>
+    </form>
+  </div>
+  </div>
+</body>
+</html>

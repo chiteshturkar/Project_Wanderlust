@@ -1,0 +1,77 @@
+/* *{
+    background-color: aquamarine;
+} */
+ .navbar{
+    background-color: azure;
+    height: 3.5 rem;
+ }
+ .fa-compass{
+    color: red;
+    font-size: 2rem;
+ }
+ .nav-link{
+    color:#222222 !important;
+ }
+ .f-info{
+    background-color: azure;
+ }
+ .f-info-social,.f-info-text,.f-info-links{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+ }
+ .f-info-social i{
+font-size: 1.8rem;
+margin-right: 1rem;
+margin-top: 0.5rem;
+ }
+ .f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    margin-right: 0.5rem;
+ }
+ .f-info-links a:hover{
+text-decoration: underline;
+ }
+ .card{
+    border: none;
+    margin-bottom: 2rem;
+ }
+ .card-img-top{
+        border-radius: 1rem !important;
+        object-fit: cover !important;
+        width: 100%;
+ }
+ .card-body{
+    padding: 0 !important;
+ }
+ .img-link{
+    text-decoration: none;
+ }
+ .card-img-overlay{
+    opacity: 0;
+ }
+ .card-img-overlay:hover{
+    opacity: 0.3;
+    background-color: azure;
+ }
+ .btn-primary{
+   background-color: red !important;
+   border: none !important;
+   color: white !important;
+ }
+ .edit-btn{
+   background-color: red !important;
+   border: none !important;
+   color: white !important;
+ }
+ .btn-edit{
+   background-color: black !important;
+   color: white !important;
+   border: none !important;
+ }
+ .btns{
+   display: flex;
+ }
+ 
