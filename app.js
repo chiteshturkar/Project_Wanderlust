@@ -34,7 +34,7 @@ const store = MongoStore.create({
   touchAfter: 24*7*60*60
 })
 
-store.on("error",() => {
+store.on("error",(err) => {
   console.log("Error occurred",err);
 })
 
@@ -78,12 +78,13 @@ async function main(){
     await mongoose.connect(dbUrl);
 }
 
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-  res.locals.currUser = req.user;
+  res.locals.currUser = req.user || null;
   next();
 });
+
 
 app.use("/listings",listingsRoute);
 app.use("/listings/:id/reviews",reviewsRoute);
@@ -119,9 +120,12 @@ app.get("/error-test", (req, res, next) => {
 //   res.send("successful testing");
 // });
 
+app.use("*",(req,res,next)=>{
+  next(new ExpressError(404,"Not Found"));
+});
 
 app.use((err, req, res, next) => {
-  let { statusCode = 500, message = "Something went wrong!" } = err;
+  let { statusCode = 404, message = "Something went wrong!" } = err;
   res.status(statusCode).render("listings/error.ejs", { err });
 });
 
